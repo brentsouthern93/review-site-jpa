@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+  <html xmlns:th="http://www.thymeleaf.org">
+  <head>
+      <title>Lounge Room Movie Reviews</title>
+      
+  </head>
+  <body>
+
+  <header>
+    
+      <h1>Lounge Room Movie Reviews</h1>
+  
+    <a href="./genreList">Movies by Genre</a>
+  </header>
+  
+    
+      <h1>Movie Titles</h1>
+        
+          
+         
+        
+          <a th:each="review: ${reviewsAsCollection}" th:href="@{http://localhost:8080/onereview/(id=${review.id})}" th:text="${review.movieTitle}"></a>
+        
+    
+    
+    
+      
+  
+  <footer>
+    <h3>Lounge Room Movie Reviews</h3>
+  </footer>
+  </body>
+  </html>
