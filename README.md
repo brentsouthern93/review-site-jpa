@@ -1,1 +1,1 @@
--This is the updated version of my previous movie review page. The main changes to this project was adding a "movies by gengre page". you can select a genre and all movies under that genre field will show up. Nad you can navigate back and forth to genre pages, movie pages, and home page.
+-This is the updated version of my previous movie review page. The main changes to this project was adding a "movies by gengre page". you can select a genre and all movies under that genre field will show up. and you can navigate back and forth to genre pages, movie pages, and home page.
