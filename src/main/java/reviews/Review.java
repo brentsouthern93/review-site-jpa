@@ -1,9 +1,14 @@
 package reviews;
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Lob;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 @Entity
@@ -24,18 +29,25 @@ public class Review {
 	@ManyToOne
 	private Genre genre; 
 
+    @ManyToMany
+	private Set<Tag> tags;  //creating relationship with reviews testing
+
+
+
+
 	// Review constructor
 	//Constructor
 	public Review(Genre genre, String movieTitle, String content, String date, 
-			String synopsis, String imageUrl){
+			String synopsis, String imageUrl, Tag... tags){
 	 this.genre = genre;
 	 this.movieTitle = movieTitle;
 	 this.content = content;
 	 this.date = date;
 	 this.synopsis = synopsis;
 	 this.imageUrl = imageUrl;
+	 this.tags = new HashSet<>(Arrays.asList(tags)); //testing
 	}
-
+	
 
 	//No argument constructor required for JPA
 	private Review() {}
@@ -71,6 +83,21 @@ public class Review {
 		return synopsis;
 	}
 
+	
+	public Set<Tag> getTags() {
+		return tags;
+	}
+
+	//to remove a tag
+	public void remove(Tag toDelete) {
+		tags.remove(toDelete);	
+	}
+	
+	// to add a tag
+	public void add(Tag toAdd) {
+		tags.add(toAdd);
+	}
+	
 	
 
 }

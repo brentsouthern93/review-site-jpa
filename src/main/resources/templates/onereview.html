@@ -15,6 +15,7 @@
     
             <img th:src="${onereview.imageUrl}"/>
             <p th:text="'Id: ' + ${onereview.id}"></p>
+            <p th:each="Tag: ${onereview.tags}"><a>Tag: </a><a th:text="${Tag.name}" th:href="@{/tags(id=${Tag.id})}"></a></p>
             <p th:text="'Title: ' + ${onereview.movieTitle}"></p>
             <p th:text="'Category: ' + ${onereview.genre.title}"></p>
             <p th:text="'Review: ' + ${onereview.content}"></p>

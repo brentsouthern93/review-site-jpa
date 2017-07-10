@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+ <html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Lounge Room Movie Reviews</title>
+
+</head>
+<body>
+	<header>
+      	
+        	<h1>Lounge Room Movie Reviews</h1>
+      	
+      <a href="/reviews">Movies Reviews Home</a>
+      <a href="/genreList">Movies By Genre</a>
+    </header>
+    
+				<a th:each="tag: ${tagsAsCollection}" th:href="@{/onetag(id=${tag.id})}"><div th:text="${tag.name}"></div></a>
+			
+  <footer>
+    <h3>Lounge Room Movie Reviews</h3>
+  </footer>
+</body>
+</html>
